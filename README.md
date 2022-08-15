@@ -35,4 +35,3 @@ Also there are the `.vscode` foler with the launcher to debug it from VSCode.
 * Add unit tests.
 * Add Go routines to improve the performance.
 * Use Cobra framework instead of just `flags`.
-* Create GitHub Action with GoReleaser to build from a pipeline a new version.
