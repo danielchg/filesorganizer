@@ -28,7 +28,7 @@ This will generate the following folder organization where will be copied each f
 
 In order to build it just run `make build` from the root folder of this repo.
 
-Also there are the `.vscode` foler with the launcher to debug it from VSCode.
+Also there is the `.vscode/launch.json` with the config to debug it using VSCode.
 
 ## TODO
 

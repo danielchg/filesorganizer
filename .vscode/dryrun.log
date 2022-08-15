@@ -1,5 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/dani/repos/github/danielchg/filesorganizer'
-go build .
-make: Leaving directory '/home/dani/repos/github/danielchg/filesorganizer'
- 
