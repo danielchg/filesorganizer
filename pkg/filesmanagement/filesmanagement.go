@@ -22,7 +22,7 @@ func GetDestPath(file os.FileInfo, files_dest_path string) (string, error) {
 
 	year := strconv.Itoa(file.ModTime().Year())
 	month := file.ModTime().Month().String()
-	new_dest_path := files_dest_path + "/" + year + "/" + month 
+	new_dest_path := files_dest_path + "/" + year + "/" + month
 	return new_dest_path, nil
 }
 
