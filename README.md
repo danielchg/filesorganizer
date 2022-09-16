@@ -1,13 +1,14 @@
 # File Organizer
 
-This project is a CLI that organize the files within a folder copying then to a diferent folder where will be create subdirectories using the `year/month` notation, this info is get from the metadata of each file in the source folder.
+This project is a CLI that organize the files saved within a folder without any directory hierarcy,then copying them to a diferent folder where will be created subdirectories using the `year/month` notation, this info is get from the metadata of each file in the source folder.
 
 ## Usage
 
-This is a CLI that expect just two arguments:
+This is a CLI expect the following arguments:
 
 * **src** This is the path where there are the files to be orgnized
 * **dest** This is the path where the files will be orgnized using a subdirectories strucutre of `year/month`
+* **w** Number of workers to parallelize file processing
 
 Example:
 
@@ -26,12 +27,11 @@ This will generate the following folder organization where will be copied each f
 
 ## Development
 
-In order to build it just run `make build` from the root folder of this repo.
+In order to build it just run `make` from the root folder of this repo.
 
-Also there is the `.vscode/launch.json` with the config to debug it using VSCode.
+Also there is a `.vscode/launch.json` file with the config to debug it using VSCode.
 
 ## TODO
 
 * Add unit tests.
-* Add Go routines to improve the performance.
 * Use Cobra framework instead of just `flags`.

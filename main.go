@@ -8,41 +8,43 @@ import (
 	fm "github.com/danielchg/filesorganizer/pkg/filesmanagement"
 )
 
-func worker(id int, files_src_path, files_dest_path *string, jobs <-chan fs.FileInfo, result chan<- string) {
-	file := <-jobs
-	src := *files_src_path + "/" + file.Name()
-	fmt.Println("File to move: ", src, "by Worker: ", id)
+func worker(id int, files_src_path, files_dest_path *string, jobs <-chan fs.FileInfo, quit <-chan struct{}) {
 
-	dest, _ := fm.GetDestPath(file, *files_dest_path)
-	fm.CreateNewPath(dest)
+	for {
+		select {
+		case file := <-jobs:
+			src := *files_src_path + "/" + file.Name()
+			fmt.Println("File to move: ", src, "by Worker: ", id)
 
-	dest_file := dest + "/" + file.Name()
-	fm.CopyFile(src, dest_file)
+			dest, _ := fm.GetDestPath(file, *files_dest_path)
+			fm.CreateNewPath(dest)
 
-	result <- dest_file
+			dest_file := dest + "/" + file.Name()
+			fm.CopyFile(src, dest_file)
+
+		case <-quit:
+			return
+		}
+	}
 
 }
 
 func main() {
 	files_src_path := flag.String("src", "./", "The path where there are the files to be organized")
 	files_dest_path := flag.String("dest", "./", "The path where the files will be organized")
+	workers := flag.Int("w", 1, "Number of workers to parallelize file processing")
 	flag.Parse()
 
-	numWorkers := 3
 	jobs := make(chan fs.FileInfo)
-	result := make(chan string)
-	for w := 1; w <= numWorkers; w++ {
-		go worker(w, files_src_path, files_dest_path, jobs, result)
+	quit := make(chan struct{})
+	for w := 1; w <= *workers; w++ {
+		go worker(w, files_src_path, files_dest_path, jobs, quit)
 	}
 
 	files, _ := fm.ListFiles(*files_src_path)
-	filesCount := len(files)
 	for _, file := range files {
 		jobs <- file
 	}
 
-	for a := 1; a <= filesCount; a++ {
-		<-result
-	}
-	close(jobs)
+	close(quit)
 }
