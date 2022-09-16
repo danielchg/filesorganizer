@@ -19,10 +19,24 @@ Example:
 This will generate the following folder organization where will be copied each file:
 
 ```bash
+$ tree ./test
 ./test
+├── 2019
+│   ├── August
+│   │   └── 2019-08-18 18.14.01-1-1.jpg
+│   ├── February
+│   │   └── 2019-02-06 15.21.06.jpg
+│   ├── January
+│   │   ├── 2019-01-27 06.08.07-1-1.jpg
+│   │   └── 2019-01-27 14.03.37.jpg
+│   └── March
+│       └── 2019-03-28 22.16.18-1.jpg
 └── 2022
-    ├── August
-    └── July
+    └── September
+        ├── 2022-07-25 13.42.15.jpg
+        └── 2022-08-03 12.03.09.jpg
+
+7 directories, 7 files
 ```
 
 ## Development
