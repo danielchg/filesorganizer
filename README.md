@@ -16,7 +16,7 @@ Example:
 ./fileorganizer --src ./samples --dest ./test
 ```
 
-This will generate the following folder organization where will be copied each file:
+All the files should be organized as below:
 
 ```bash
 $ tree ./test
