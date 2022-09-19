@@ -1,7 +1,7 @@
 # File Organizer
 
-![CI Status](https://github.com/danielchg/filesorganizer/actions/workflows/goreleaser.yml/badge.svg)
-![CI Status](https://github.com/danielchg/filesorganizer/actions/workflows/tests.yml/badge.svg)
+![CI Status](https://github.com/danielchg/filesorganizer/actions/workflows/goreleaser.yaml/badge.svg)
+![CI Status](https://github.com/danielchg/filesorganizer/actions/workflows/tests.yaml/badge.svg)
 
 This project is a CLI that organize the files saved within a folder without any directory hierarcy,then copying them to a diferent folder where will be created subdirectories using the `year/month` notation, this info is get from the metadata of each file in the source folder.
 
