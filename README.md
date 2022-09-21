@@ -42,6 +42,8 @@ $ tree ./test
 7 directories, 7 files
 ```
 
+[![asciicast](https://asciinema.org/a/522876.svg)](https://asciinema.org/a/522876)
+
 ## Development
 
 In order to build it just run `make` from the root folder of this repo.
