@@ -42,7 +42,7 @@ $ tree ./test
 7 directories, 7 files
 ```
 
-[![asciicast](https://asciinema.org/a/522876.svg)](https://asciinema.org/a/522876)
+![terminal](./assets/terminal.gif)
 
 ## Development
 
