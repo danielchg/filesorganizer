@@ -1,14 +1,19 @@
 
 build:
+	go mod download
 	go build .
 
-all: clean build test
-
-.PHONY=test
-test:
+.PHONY: run
+run:
 	./filesorganizer --src ./samples --dest ./test
 
-.PHONY=clean
+.PHONY: clean
 clean:
 	rm -rf ./test
 	rm -f filesorganizer
+
+all: clean build run
+
+.PHONY: test
+test:
+	go test ./... --cover
