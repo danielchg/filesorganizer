@@ -52,5 +52,4 @@ Also there is a `.vscode/launch.json` file with the config to debug it using VSC
 
 ## TODO
 
-* Add unit tests.
 * Use Cobra framework instead of just `flags`.
