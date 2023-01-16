@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Package",
+            "name": "Run example",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${fileDirname}",
+            "program": "${workspaceFolder}/main.go",
             "args": [
                 "--src",
                 "./samples",
@@ -18,6 +18,14 @@
                 "--w",
                 "2"
             ]
-        }
+        },
+        {
+            "name": "Tests",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceFolder}/pkg/filesmanagement",
+            "showLog": true
+          }
     ]
 }
